@@ -1,0 +1,478 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fdfdfd;
+}
+
+/* Container Global */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  border-bottom: 2px solid #eee;
+  padding: 20px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Para responsividade do cabeçalho */
+}
+
+header h1 {
+  color: #bb2288;
+  font-size: 28px;
+  margin-bottom: 10px; /* Espaço abaixo do título em mobile */
+}
+
+/* Menu principal WordPress */
+.menu-site {
+  width: 100%; /* Ocupa toda a largura em mobile */
+  margin-top: 10px; /* Espaço acima do menu em mobile */
+}
+
+.menu-principal {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap; /* Permite que os itens do menu quebrem linha */
+}
+
+.menu-principal li {
+  list-style: none;
+}
+
+.menu-principal a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #bb2288;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+}
+
+.menu-principal a:hover {
+  background-color: #bb2288;
+  color: #fff;
+}
+
+/* Media Query para Header e Menu em telas maiores */
+@media (min-width: 768px) {
+  header h1 {
+    margin-bottom: 0; /* Remove espaço abaixo do título em desktop */
+  }
+
+  .menu-site {
+    width: auto; /* Largura automática em desktop */
+    margin-top: 0; /* Remove margem acima do menu em desktop */
+  }
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(90deg, #ffcce5, #ffe6f0);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  color: #bb2288;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+/* Seção Sobre a Empresa */
+#sobre {
+  padding: 40px 20px;
+  background-color: #fdfdfd;
+  text-align: center;
+}
+
+#sobre h2 {
+  color: #bb2288;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+#sobre p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Seção Nossos Produtos (Home e Arquivo) */
+#produtos, .archive.post-type-archive-produto .container {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+#produtos h2, .archive.post-type-archive-produto h2 {
+  color: #bb2288;
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mantém a base de 250px */
+  gap: 30px; /* Aumenta o espaçamento entre os produtos */
+  justify-content: center; /* Centraliza o grid */
+}
+
+.produto {
+  background-color: #fff;
+  padding: 20px; /* Aumenta o padding */
+  border: 1px solid #eee;
+  border-radius: 10px; /* Aumenta o border-radius */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+.produto:hover {
+  transform: translateY(-8px); /* Efeito de elevação maior no hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada no hover */
+}
+
+/* Estilo para as imagens dos produtos no grid (Home/Arquivo) */
+.produto img {
+  max-width: 100%; /* A imagem ocupa no máximo 100% da largura disponível */
+  height: auto; /* A altura se ajusta automaticamente para manter a proporção */
+  display: block; /* Garante que a imagem se comporte como um bloco */
+  margin: 0 auto 15px auto; /* Centraliza horizontalmente e adiciona margem inferior */
+  border-radius: 8px; /* Mantém o border-radius */
+}
+
+/* Estilo para o título do produto dentro do card */
+.produto h3 {
+  color: #bb2288;
+  font-size: 20px;
+  margin-top: 10px; /* Adiciona uma margem superior para separar da imagem */
+  margin-bottom: 5px; /* Margem inferior para separar do preço */
+  min-height: 48px; /* Mantém uma altura mínima para consistência */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo para o link do título, se houver */
+.produto h3 a {
+  text-decoration: none; /* Remove sublinhado padrão */
+  color: inherit; /* Herda a cor do h3 */
+  transition: color 0.3s ease;
+}
+
+.produto h3 a:hover {
+  color: #991e77; /* Escurece a cor no hover */
+}
+
+
+/* Estilo para o preço do produto dentro do card */
+.produto p.produto-preco { /* Mais específico para garantir que pegue */
+  font-weight: bold;
+  color: #bb2288;
+  font-size: 18px;
+  margin-top: 0; /* Remove margem superior se já tem no h3 */
+  margin-bottom: 10px; /* Espaçamento abaixo do preço */
+}
+
+/* Página individual do produto (single-produto.php) */
+.produto-single-page {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.produto-single-page .produto-detalhes {
+  display: flex;
+  flex-direction: column; /* Coloca os elementos em coluna por padrão */
+  gap: 30px;
+}
+
+.produto-single-page h1 {
+  color: #bb2288;
+  font-size: 32px; /* Tamanho maior para o título do produto */
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 30px; /* Mais espaço abaixo do título */
+}
+
+.conteudo-principal-produto {
+  display: flex;
+  flex-direction: column; /* Em colunas para telas pequenas */
+  gap: 30px;
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+}
+
+.produto-imagem {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.produto-imagem img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto; /* Centraliza a imagem horizontalmente */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra para a imagem */
+}
+
+.produto-descricao-info {
+  flex: 1; /* Permite que o bloco de descrição ocupe o espaço restante */
+}
+
+.produto-descricao {
+  font-size: 17px; /* Aumenta a fonte da descrição */
+  line-height: 1.7; /* Aumenta o espaçamento entre linhas */
+}
+
+.produto-descricao p {
+  margin-bottom: 15px; /* Mais espaço entre parágrafos */
+}
+
+.produto-descricao ul {
+  list-style: disc inside;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.produto-descricao ul li {
+  margin-bottom: 8px; /* Mais espaço entre itens de lista */
+}
+
+.produto-preco-display {
+  font-size: 24px; /* Aumenta o tamanho da fonte do preço */
+  font-weight: bold;
+  color: #bb2288;
+  margin-top: 25px; /* Mais margem acima do preço */
+  text-align: left; /* Alinha o preço à esquerda */
+}
+
+.whatsapp-contato-single {
+  background-color: #25D366;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 25px; /* Aumenta o padding do botão */
+  border-radius: 8px; /* Borda mais arredondada */
+  display: inline-block;
+  font-weight: bold;
+  font-size: 18px; /* Aumenta a fonte do botão */
+  margin-top: 40px; /* Aumenta a margem para separar do conteúdo */
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+  width: auto;
+  align-self: center; /* Centraliza o botão dentro da coluna */
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); /* Sombra para o botão */
+}
+
+.whatsapp-contato-single:hover {
+  background-color: #1ebe57;
+  transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+/* Media Queries para single-produto em telas maiores */
+@media (min-width: 768px) {
+  .produto-single-page h1 {
+    text-align: left; /* Alinha o título à esquerda em telas maiores */
+  }
+
+  .conteudo-principal-produto {
+    flex-direction: row; /* Layout em linha para telas maiores */
+    align-items: flex-start; /* Alinha o topo dos elementos */
+  }
+
+  .produto-imagem {
+    flex: 0 0 400px; /* Largura fixa para a imagem em telas maiores */
+    max-width: 400px;
+    margin-right: 40px; /* Aumenta o espaçamento entre imagem e texto */
+  }
+
+  .produto-imagem img {
+    margin: 0; /* Remove a centralização horizontal em desktop */
+  }
+
+  .produto-single-page .produto-detalhes {
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  }
+
+  .whatsapp-contato-single {
+    align-self: flex-start; /* Alinha o botão à esquerda em telas maiores */
+  }
+}
+
+/* Formulário Geral */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Aumenta o espaçamento entre campos */
+}
+
+form input, form textarea {
+  padding: 12px; /* Aumenta o padding dos inputs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #bb2288;
+  color: #fff;
+  padding: 12px 20px; /* Aumenta o padding do botão */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px; /* Aumenta a fonte do botão */
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #991e77;
+}
+
+/* Footer */
+footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+footer p {
+  color: #555;
+  font-size: 15px;
+}
+
+/* Redes Sociais Gerais (aplicadas onde existem os elementos) */
+.redes-sociais {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center; /* Centraliza os ícones de redes sociais */
+  flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+}
+
+.redes-sociais a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.redes-sociais a:hover {
+  opacity: 0.8;
+}
+
+.redes-sociais .whatsapp {
+  background-color: #25D366;
+}
+
+.redes-sociais .instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* Página de Contato */
+.contato-exclusivo {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.container-contato {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  justify-content: center; /* Centraliza as colunas de contato */
+}
+
+.formulario-contato,
+.info-contato {
+  flex: 1 1 300px; /* Permite que as colunas cresçam e encolham, com base de 300px */
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.formulario-contato h2,
+.info-contato h3 {
+  color: #bb2288;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.info-contato p {
+  margin: 10px 0; /* Aumenta o espaçamento entre as informações */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.info-contato strong {
+  color: #555;
+}
+
+.info-contato a {
+  color: #bb2288;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.info-contato a:hover {
+  text-decoration: underline;
+}
+
+.mapa {
+  margin-top: 30px; /* Mais espaço acima do mapa */
+  border-radius: 10px;
+  overflow: hidden; /* Garante que o iframe não saia das bordas */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 400px; /* Altura padrão para o mapa */
+  border: 0;
+}
+
+/* Media Query para Página de Contato em telas maiores */
+@media (min-width: 768px) {
+  .formulario-contato h2,
+  .info-contato h3 {
+    text-align: left; /* Alinha títulos à esquerda em desktop */
+  }
+
+  .redes-sociais {
+    justify-content: flex-start; /* Alinha redes sociais à esquerda em desktop */
+  }
+}
