@@ -34,10 +34,32 @@ header .container {
   flex-wrap: wrap; /* Para responsividade do cabeçalho */
 }
 
+/* Logo com ícone */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  margin-bottom: 10px; /* Espaço abaixo do logo em mobile */
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(187, 34, 136, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-icon {
+  transform: scale(1.1);
+}
+
 header h1 {
   color: #bb2288;
   font-size: 28px;
-  margin-bottom: 10px; /* Espaço abaixo do título em mobile */
+  margin: 0;
 }
 
 /* Menu principal WordPress */
@@ -77,8 +99,17 @@ header h1 {
 
 /* Media Query para Header e Menu em telas maiores */
 @media (min-width: 768px) {
+  .logo {
+    margin-bottom: 0; /* Remove espaço abaixo do logo em desktop */
+  }
+
+  .logo-icon {
+    width: 60px;
+    height: 60px;
+  }
+
   header h1 {
-    margin-bottom: 0; /* Remove espaço abaixo do título em desktop */
+    font-size: 32px;
   }
 
   .menu-site {
@@ -368,14 +399,17 @@ footer p {
 }
 
 /* Redes Sociais Gerais (aplicadas onde existem os elementos) */
+/* Redes Sociais Gerais (aplicadas onde existem os elementos) */
 .redes-sociais {
   margin-top: 20px;
   display: flex;
   gap: 15px;
-  justify-content: center; /* Centraliza os ícones de redes sociais */
-  flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+  justify-content: center; 
+  flex-wrap: wrap; 
+  width: 100%; 
 }
 
+/* O restante do seu código CSS */
 .redes-sociais a {
   display: inline-flex;
   align-items: center;
@@ -472,7 +506,3 @@ footer p {
     text-align: left; /* Alinha títulos à esquerda em desktop */
   }
 
-  .redes-sociais {
-    justify-content: flex-start; /* Alinha redes sociais à esquerda em desktop */
-  }
-}

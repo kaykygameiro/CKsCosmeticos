@@ -37,7 +37,7 @@
             </a>
             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <?php if (get_field('preco')) : ?>
-              <p class="produto-preco">Preço: R$ <?php the_field('preco'); ?></p>
+              <p class="produto-preco"> R$ <?php the_field('preco'); ?></p>
             <?php else : ?>
               <p class="produto-preco">Preço sob consulta</p>
             <?php endif; ?>
@@ -57,10 +57,10 @@
 <!-- Redes Sociais -->
 <div class="redes-sociais">
   <a href="https://wa.me/5521964531822" target="_blank" class="whatsapp">
-    <i class="fab fa-whatsapp"></i> WhatsApp
+    <i class="fab fa-whatsapp.png"></i> WhatsApp
   </a>
   <a href="https://instagram.com/seuusuario" target="_blank" class="instagram">
-    <i class="fab fa-instagram"></i> Instagram
+    <i class="fab fa-instagram.jpg"></i> Instagram
   </a>
 </div>
 
